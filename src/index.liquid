@@ -1,0 +1,67 @@
+---
+title: Home
+layout: 'base.liquid'
+---
+    
+        {%- for article in collections.featured -%}
+            <article class="teaser teaserSplitHero">
+                <img class="teaser__image" src="/assets/{{article.data.image}}" alt="Teaser Image">
+                <section class="teaser__content">
+                    <h3 class="teaser__title">{{article.data.title}}</h3>
+                    <p class="teaser__copy">{{article.data.description}}</p>
+                    <a href="{{article.url}}" class="teaser__link">Continue</a>
+                </section>
+            </article>
+        {%- endfor -%}
+
+        <h2 class="categoryTitle">Kultur</h2>
+
+        <section class="teaserList teaserTiles">
+
+            {% for article in collections.culture limit: 4 %}
+                {% if forloop.first %}
+                <article class="teaser bigTile">
+                    <div class="bigTile__content">
+                        <h3 class="teaser__title">{{article.data.title}}</h3>
+                        <p class="teaser__copy">{{article.data.description}}</p>
+                    </div>
+                    <span class="bigTile__gradient"></span>
+                    <img src="/assets/{{article.data.image}}" alt="{{article.data.title}}" class="bigTile__image">       
+                </article>
+                {% else %}
+                <article class="teaser smallTile">
+                    <img src="/assets/{{article.data.image}}" alt="{{article.data.title}}" class="smallTile__image">
+                    <div class="smallTile__content">
+                        <h2 class="teaser__title">{{article.data.title}}</h2>
+                        <p class="teaser__copy">{{article.data.description}}</p>
+                        <a href="{{article.url}}" class="teaser__link">Continue</a>
+                    </div>
+                </article>
+                {% endif %}
+                
+            {% endfor %}
+
+        </section>
+
+        
+
+        <h2 class="categoryTitle">Art & Media</h2>
+
+        <section class="teaserList teaserTiles noMargin">
+
+            {% for article in collections.art limit: 4 %}
+                <article class="teaser mediumTile">
+                    <div class="mediumTile__content">
+                        <h3 class="teaser__title">{{article.data.title}}</h3>
+                        <p class="teaser__copy">{{article.data.description}}</p>
+                    </div>
+                    <span class="mediumTile__gradient"></span>
+                    <img src="/assets/{{article.data.image}}" alt="{{article.data.title}}" class="mediumTile__image">
+                    
+                </article>
+            {% endfor %}
+
+            
+           
+            
+        </section>

@@ -1,0 +1,194 @@
+html
+    --col-neutral-00: hsl(0, 0%, 100%)
+    --col-neutral-80: hsl(0, 0%, 80%)
+    --col-neutral-20: hsl(0, 0%, 20%)
+    --col-neutral-10: hsl(0, 0%, 10%)
+    
+body
+    font-size: 16px
+    font-family: 'Helvetica Neue', sans-serif
+    font-weight: 300
+
+*, *::after, *::before
+    box-sizing: border-box
+
+body, div, header, main, footer, section, article, ul, ol, li, a, h1, h2, h3, p
+    padding: 0
+    margin: 0
+    margin-block-end: 0
+    margin-block-start: 0
+
+img
+    max-width: 100%
+    object-fit: cover
+
+header
+    width: 100%
+    padding: 1rem 0
+
+menu
+    display: flex
+    align-items: center
+
+main
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.logo
+    overflow: visible
+    object-fit: contain
+
+.categoryTitle
+    font-size: 56px
+    font-family: 'Times New Roman', serif
+    color: var(--col-neutral-20)
+    border-top: 1px solid currentColor
+    border-bottom: 1px solid currentColor
+    display: inline-block
+    padding: .25em 2em
+    margin: 2em 0
+    letter-spacing: -1.2px
+
+    &::before
+
+.headerWrapper
+    max-width: 1200px
+    display: flex
+    justify-content: space-between
+    margin: 0 auto
+
+.menuList
+    list-style: none
+    display: flex
+
+.menuList__item + .menuList__item
+    margin-left: 2rem
+
+.menuList__item
+    font-size: 1.25rem
+
+.teaser
+    overflow: hidden
+
+.teaserSplitHero
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 2.5rem
+    padding: 2.5rem
+    align-items: center
+    background-color: var(--col-neutral-20)
+
+.teaser__content
+    max-width: 580px
+
+.teaser__title
+    font-size: 2.5rem
+    font-weight: 300
+    margin-bottom: .5em
+    color: var(--col-neutral-00)
+
+.teaser__copy
+    font-size: 1.25rem
+    line-height: 2.25rem
+    color: var(--col-neutral-00)
+
+.teaser__link
+    display: inline-block
+    color: var(--col-neutral-00)
+    font-size: 1.25rem
+    text-decoration: none
+    margin-top: 1em
+
+    &::after
+        display: inline-block
+        content: ''
+        border-bottom: 1px solid var(--col-neutral-00)
+        border-right: 1px solid var(--col-neutral-00)
+        transform: rotate(-45deg)
+        height: .75em
+        width: .75em
+        margin-left: .25em
+
+.teaserTiles
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: auto auto
+    grid-gap: 1.5rem
+    width: 1200px
+    margin: 0 auto
+
+    &.noMargin
+        width: 100%
+
+.bigTile
+    grid-row: 1 / span 1
+    grid-column: 1 / -1
+    background-color: purple
+    position: relative
+    height: 600px
+
+.bigTile__image, .mediumTile__image
+    position: absolute
+    top: 0
+    z-index: 1
+
+.bigTile__gradient, .mediumTile__gradient
+    position: absolute
+    z-index: 2
+    bottom: 0
+    left: 0
+    right: 0
+    height: 50%
+    background: linear-gradient(transparent, var(--col-neutral-10))
+
+.bigTile__content
+    z-index: 3
+    color: white
+    padding-left: 2em
+    padding-bottom: 2em
+    position: absolute
+    bottom: 0
+    width: 50%
+
+.mediumTile
+    //grid-row: 1 / span 1
+    grid-column: auto / span 6
+    background-color: purple
+    position: relative
+    height: 60vh
+
+.mediumTile__image
+    width: 100%
+    height: 100%
+
+.mediumTile__content
+    z-index: 3
+    color: white
+    padding: 2em
+    position: absolute
+    bottom: 0
+    width: 100%
+
+.smallTile
+    grid-row: 2 / span 1
+    grid-column: auto / span 4
+    display: flex
+    flex-direction: column
+
+.smallTile__image
+    width: 100%
+    //margin-bottom: 1.5rem
+
+.smallTile__content
+    padding: 1em
+
+    .teaser__title, .teaser__copy, .teaser__link
+        color: var(--col-neutral-20)
+
+    .teaser__link::after
+        border-right: 1px solid var(--col-neutral-20)
+        border-bottom: 1px solid var(--col-neutral-20)
+
+    .teaser__title
+        font-size: 2em
