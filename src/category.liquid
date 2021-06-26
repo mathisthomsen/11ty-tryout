@@ -1,0 +1,24 @@
+---
+layout: 'base.liquid'
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - featured
+    - article
+permalink: "{{ tag }}/"
+---
+
+<section class="teaserList teaserTiles">
+
+    {% for article in collections[tag] %}
+        {% if forloop.first %}
+            {% include modules/bigTile %}
+        {% else %}
+            {% include modules/smallTile %}
+        {% endif %}
+        
+    {% endfor %}
+
+</section>
