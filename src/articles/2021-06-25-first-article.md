@@ -4,6 +4,7 @@ author: Mathis Thomsen
 tags: 
     - article
     - featured
+category: art
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum veritatis, eum error ducimus tempore officia exercitationem accusamus corrupti molestiae dolor neque quis quaerat inventore, illum officiis, obcaecati rerum minima. Unde minima, expedita hic voluptatem deleniti aliquid cum, quia laborum harum inventore porro sint ad illum obcaecati ipsam deserunt nulla?
 image: image-1.jpg
 ---

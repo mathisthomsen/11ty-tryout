@@ -4,6 +4,7 @@ author: Mathis Thomsen
 tags: 
     - article
     - art
+category: art
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum veritatis, eum error ducimus tempore officia exercitationem accusamus.
 image: image-6.jpg
 ---

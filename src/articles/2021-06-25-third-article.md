@@ -4,6 +4,7 @@ author: Mathis Thomsen
 tags: 
     - article
     - culture
+category: culture
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum veritatis, eum error ducimus tempore officia exercitationem accusamus.
 image: image-3.jpg
 ---

@@ -1,6 +1,8 @@
 html {
   --col-neutral-00: hsl(0, 0%, 100%);
   --col-neutral-80: hsl(0, 0%, 80%);
+  --col-neutral-60: hsl(0, 0%, 60%);
+  --col-neutral-40: hsl(0, 0%, 40%);
   --col-neutral-20: hsl(0, 0%, 20%);
   --col-neutral-10: hsl(0, 0%, 10%); }
 
@@ -55,17 +57,6 @@ main {
   -o-object-fit: contain;
      object-fit: contain; }
 
-.categoryTitle {
-  font-size: 56px;
-  font-family: 'Times New Roman', serif;
-  color: var(--col-neutral-20);
-  border-top: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
-  display: inline-block;
-  padding: .25em 2em;
-  margin: 2em 0;
-  letter-spacing: -1.2px; }
-
 .headerWrapper {
   max-width: 1200px;
   display: -webkit-box;
@@ -88,20 +79,68 @@ main {
 .menuList__item {
   font-size: 1.25rem; }
 
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--col-neutral-20);
+  color: white;
+  margin-top: 2rem;
+  padding: 2rem 1rem; }
+
+.footer__linkList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none; }
+
+.footer__linkList__item > a {
+  text-decoration: none;
+  color: currentColor; }
+
+.footer__linkList__item + .footer__linkList__item {
+  margin-left: 1rem; }
+
+.categoryTitle {
+  font-size: 56px;
+  font-family: 'Times New Roman', serif;
+  color: var(--col-neutral-20);
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  padding: .25em 2em;
+  margin: 2em 0;
+  letter-spacing: -1.2px; }
+
 .teaser {
   overflow: hidden; }
 
 .teaserSplitHero {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   grid-gap: 2.5rem;
   padding: 2.5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: var(--col-neutral-20); }
+  @media screen and (min-width: 1024px) {
+    .teaserSplitHero {
+      -ms-grid-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr; } }
 
 .teaser__content {
   max-width: 580px; }
@@ -142,8 +181,10 @@ main {
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
   grid-gap: 1.5rem;
-  width: 1200px;
   margin: 0 auto; }
+  @media screen and (min-width: 1200px) {
+    .teaserTiles {
+      width: 1200px; } }
   .teaserTiles.noMargin {
     width: 100%; }
 
@@ -156,10 +197,23 @@ main {
   position: relative;
   height: 600px; }
 
+@media screen and (hover: hover) {
+  .bigTile:hover img, .mediumTile:hover img {
+    -webkit-transform: scale(1.075);
+            transform: scale(1.075); } }
+
 .bigTile__image, .mediumTile__image {
   position: absolute;
   top: 0;
-  z-index: 1; }
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 1200ms ease-in-out;
+  transition: -webkit-transform 1200ms ease-in-out;
+  transition: transform 1200ms ease-in-out;
+  transition: transform 1200ms ease-in-out, -webkit-transform 1200ms ease-in-out; }
 
 .bigTile__gradient, .mediumTile__gradient {
   position: absolute;
@@ -178,13 +232,16 @@ main {
   padding-bottom: 2em;
   position: absolute;
   bottom: 0;
-  width: 50%; }
+  max-width: 75ch; }
 
 .mediumTile {
-  grid-column: auto / span 6;
+  grid-column: 1 / -1;
   background-color: purple;
   position: relative;
-  height: 60vh; }
+  height: 450px; }
+  @media screen and (min-width: 1024px) {
+    .mediumTile {
+      grid-column: auto / span 6; } }
 
 .mediumTile__image {
   width: 100%;
@@ -196,13 +253,12 @@ main {
   padding: 2em;
   position: absolute;
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+  max-width: 75ch; }
 
 .smallTile {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2 / span 1;
-  grid-column: auto / span 4;
+  grid-row: auto;
+  grid-column: 1 / -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,6 +266,12 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  @media screen and (min-width: 1024px) {
+    .smallTile {
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+      grid-row: 2 / span 1;
+      grid-column: auto / span 4; } }
 
 .smallTile__image {
   width: 100%; }
@@ -223,4 +285,66 @@ main {
     border-bottom: 1px solid var(--col-neutral-20); }
   .smallTile__content .teaser__title {
     font-size: 2em; }
+
+.articleHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem; }
+  @media screen and (min-width: 769px) {
+    .articleHeader {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      .articleHeader .articleHeader__title {
+        text-align: left; } }
+
+.articleHeader__image {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 480px) {
+    .articleHeader__image {
+      height: 400px;
+      width: 400px; } }
+  @media screen and (min-width: 769px) {
+    .articleHeader__image {
+      margin-right: 1rem; } }
+
+.articleHeader__content {
+  max-width: 48ch; }
+
+.articleHeader__title {
+  font-family: "Times New Roman", sans-serif;
+  font-size: 3rem;
+  margin-bottom: .5em;
+  text-align: center; }
+
+.articleHeader__description {
+  font-size: 1.25rem;
+  line-height: 1.5; }
+
+.articleMain {
+  max-width: 60ch;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 1rem; }
+  .articleMain p + p {
+    margin-top: 1em; }
+  .articleMain p:first-of-type::first-letter {
+    font-size: 3em;
+    line-height: 1;
+    font-weight: 600;
+    margin-right: .2em;
+    float: left; }
 /*# sourceMappingURL=style.css.map */
