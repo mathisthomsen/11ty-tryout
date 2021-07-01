@@ -1,7 +1,10 @@
 ---
 layout: base.liquid
+pageType: article
 permalink: "{{ category }}/{{ title | slug}}/"
 ---
+
+{% include modules/breadcrumb.liquid %}
 <div class="articleHeader"> 
     <img class="articleHeader__image" src="/assets/{{image}}" alt="">
     <div class="articleHeader__content">

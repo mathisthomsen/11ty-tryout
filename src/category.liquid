@@ -1,5 +1,6 @@
 ---
 layout: 'base.liquid'
+pageType: category
 pagination:
   data: collections
   size: 1
@@ -11,7 +12,9 @@ pagination:
     - tagsList
 permalink: "{{ tag }}/"
 ---
+{% include modules/breadcrumb %}
 
+<h1 class="categoryTitle">{{tag}}</h1>
 <section class="teaserList teaserTiles">
 
     {% for article in collections[tag] %}
