@@ -7,6 +7,7 @@ html
     --col-neutral-40: hsl(0, 0%, 40%)
     --col-neutral-20: hsl(0, 0%, 20%)
     --col-neutral-10: hsl(0, 0%, 10%)
+    --col-accent-50: hsl(41, 100%, 50%)
 
 //GENERAL & RESET
   
@@ -31,6 +32,8 @@ img
 header
     width: 100%
     padding: 1rem 0
+    margin-bottom: 3rem
+    background-color: var(--col-neutral-20)
 
 menu
     display: flex
@@ -41,7 +44,16 @@ main
     flex-direction: column
     align-items: center
 
+a
+    text-decoration: none
+    color: currentColor
+
 // HEADER
+
+.logoWrapper
+    display: flex
+    align-items: center
+    align-self: flex-start
 
 .logo
     overflow: visible
@@ -52,16 +64,52 @@ main
     display: flex
     justify-content: space-between
     margin: 0 auto
+    padding: 0 1rem
+
+menu
+    display: flex
+    flex-direction: column
+    position: absolute
+    right: 1rem
+    top: 0
+    padding: 1rem
+    background: var(--col-neutral-20)
+    z-index: 10
+
+    @media screen and (min-width: 468px)
+        position: static
+
 
 .menuList
     list-style: none
     display: flex
+    flex-direction: column
+    height: 0px
+    opacity: 0
 
-.menuList__item + .menuList__item
-    margin-left: 2rem
+    @media screen and (min-width: 468px)
+        display: flex
+        flex-direction: row
+        height: auto
+        opacity: 1
+
+        .menuList__item + .menuList__item
+            margin-left: 2rem
+
+#menuToggle
+    display: none
+
+#menuToggle__label
+    @media screen and (min-width: 468px)
+        display: none
+
+#menuToggle:checked + .menuList
+    height: auto
+    opacity: 1
 
 .menuList__item
     font-size: 1.25rem
+    color: var(--col-neutral-80)
 
 // FOOTER
 
@@ -71,7 +119,7 @@ main
     align-items: center
     background-color: var(--col-neutral-20)
     color: white
-    margin-top: 2rem
+    margin-top: 5rem
     padding: 2rem 1rem
 
 .footer__linkList
@@ -96,11 +144,36 @@ main
     border-top: 1px solid currentColor
     border-bottom: 1px solid currentColor
     display: inline-block
-    padding: .25em 2em
+    padding: .25em 1em
     margin: 2em 0
     letter-spacing: -1.2px
 
+.categoryLink
+    margin-top: 3rem
+    font-size: 2rem
+    text-decoration: none
+    color: var(--col-neutral-20)
+    overflow: visible
+    position: relative
+    font-family: 'Times New Roman', serif
+
     &::before
+        content: ''
+        display: inline-block
+        position: absolute
+        width: 40px
+        height: 1px
+        outline: 1px solid transparent
+        background-color: currentColor
+        bottom: 0
+        left: 50%
+        transform: translate(-50%, 4px)
+
+    &:hover
+        &::before
+            background-color: var(--col-accent-50)
+            outline-color: var(--col-accent-50)
+            transform: ranslate(-50%, 32px)
 
 .teaser
     overflow: hidden
@@ -109,26 +182,36 @@ main
     display: grid
     grid-template-columns: 1fr
     grid-gap: 2.5rem
-    padding: 2.5rem
+    //padding: 2.5rem
     align-items: center
-    background-color: var(--col-neutral-20)
 
     @media screen and (min-width: 1024px)
         grid-template-columns: 1fr 1fr
 
 .teaser__content
     max-width: 580px
+    padding: 2rem
+    background-color: var(--col-neutral-20)
+    box-shadow: 0 3px 10px var(--col-neutral-80)
 
 .teaser__title
-    font-size: 2.5rem
-    font-weight: 300
-    margin-bottom: .5em
+    font-size: 1.5rem
+    font-weight: 400
+    margin-bottom: .25em
     color: var(--col-neutral-00)
 
+    @media screen and (min-width: 600px)
+        font-size: 2.5rem
+        font-weight: 300
+
+
 .teaser__copy
-    font-size: 1.25rem
-    line-height: 2.25rem
+    font-size: 1rem
+    line-height: 1.5
     color: var(--col-neutral-00)
+
+    @media screen and (min-width: 600px)
+        font-size: 1.25rem
 
 .teaser__link
     display: inline-block
@@ -153,6 +236,8 @@ main
     grid-template-rows: auto auto
     grid-gap: 1.5rem
     margin: 0 auto
+    width: 100%
+
 
     @media screen and (min-width:1200px)
         width: 1200px
@@ -163,7 +248,7 @@ main
 .bigTile
     grid-row: 1 / span 1
     grid-column: 1 / -1
-    background-color: purple
+    background-color: grey
     position: relative
     height: 600px
 
@@ -211,12 +296,15 @@ main
 .mediumTile
     //grid-row: 1 / span 1
     grid-column: 1 / -1
-    background-color: purple
+    background-color: grey
     position: relative
     height: 450px
 
     @media screen and (min-width: 1024px)
         grid-column: auto / span 6
+
+    @media screen and (min-width: 1600px)
+        grid-column: auto / span 4
 
 .mediumTile__image
     width: 100%

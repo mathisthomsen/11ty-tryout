@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig){
             .filter((tag) => !['all', 'featured', 'article'].includes(tag))
             .forEach((tag) => tagsSet.add(tag))
         })
-        return [...tagsSet].sort((a, b) => b.localeCompare(a))
+        return [...tagsSet].sort((a, b) => a.localeCompare(b))
       })
 
     return {

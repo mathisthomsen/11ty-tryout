@@ -5,8 +5,8 @@ tags:
     - article
     - featured
 category: art
-description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum veritatis, eum error ducimus tempore officia exercitationem accusamus corrupti molestiae dolor neque quis quaerat inventore, illum officiis, obcaecati rerum minima. Unde minima, expedita hic voluptatem deleniti aliquid cum, quia laborum harum inventore porro sint ad illum obcaecati ipsam deserunt nulla?
-image: image-1.jpg
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum veritatis, eum error ducimus tempore officia exercitationem accusamus corrupti molestiae dolor neque quis quaerat inventore, illum officiis, obcaecati rerum minima. 
+image: image-13.jpg
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi etiam dignissim diam quis enim. Posuere lorem ipsum dolor sit amet. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Mauris ultrices eros in cursus turpis. Aliquet nibh praesent tristique magna sit amet purus. Fringilla urna porttitor rhoncus dolor purus non enim praesent elementum. Aliquet enim tortor at auctor urna nunc id. Tristique magna sit amet purus gravida quis blandit turpis cursus. Magna ac placerat vestibulum lectus mauris ultrices eros. Aliquam id diam maecenas ultricies mi. Quisque egestas diam in arcu cursus euismod quis. Cras sed felis eget velit aliquet sagittis. Interdum consectetur libero id faucibus nisl tincidunt eget nullam non. Mi in nulla posuere sollicitudin. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Magna fringilla urna porttitor rhoncus. Tellus elementum sagittis vitae et leo. Augue lacus viverra vitae congue eu consequat.
 
