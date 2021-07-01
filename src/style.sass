@@ -19,7 +19,7 @@ body
 *, *::after, *::before
     box-sizing: border-box
 
-body, div, header, main, footer, section, article, ul, ol, li, a, h1, h2, h3, p
+body, div, header, main, footer, section, article, ul, ol, li, a, h1, h2, h3, p, menu
     padding: 0
     margin: 0
     margin-block-end: 0
@@ -35,10 +35,6 @@ header
     margin-bottom: 3rem
     background-color: var(--col-neutral-20)
 
-menu
-    display: flex
-    align-items: center
-
 main
     display: flex
     flex-direction: column
@@ -53,7 +49,6 @@ a
 .logoWrapper
     display: flex
     align-items: center
-    align-self: flex-start
 
 .logo
     overflow: visible
@@ -63,21 +58,23 @@ a
     max-width: 1200px
     display: flex
     justify-content: space-between
+    align-items: center
     margin: 0 auto
     padding: 0 1rem
 
 menu
     display: flex
+    align-items: center
     flex-direction: column
-    position: absolute
     right: 1rem
     top: 0
-    padding: 1rem
     background: var(--col-neutral-20)
     z-index: 10
 
     @media screen and (min-width: 468px)
         position: static
+        padding: 1rem
+        position:
 
 
 .menuList
@@ -100,6 +97,7 @@ menu
     display: none
 
 #menuToggle__label
+    color: white
     @media screen and (min-width: 468px)
         display: none
 
@@ -133,6 +131,22 @@ menu
 
 .footer__linkList__item + .footer__linkList__item
     margin-left: 1rem
+
+// BREADCRUMB
+
+.breadcrumb
+    color: var(--col-neutral-600)
+    margin-bottom: 1rem
+
+.breadcrumb > ul
+    display: flex
+    flex-direction: row
+    
+.breadcrumb__element
+    list-style: none
+
+.breadcrumb__element + .breadcrumb__element
+    margin-left: .75rem
 
 
 // HOME
@@ -219,16 +233,6 @@ menu
     font-size: 1.25rem
     text-decoration: none
     margin-top: 1em
-
-    &::after
-        display: inline-block
-        content: ''
-        border-bottom: 1px solid var(--col-neutral-00)
-        border-right: 1px solid var(--col-neutral-00)
-        transform: rotate(-45deg)
-        height: .75em
-        width: .75em
-        margin-left: .25em
 
 .teaserTiles
     display: grid
@@ -338,10 +342,6 @@ menu
     .teaser__title, .teaser__copy, .teaser__link
         color: var(--col-neutral-20)
 
-    .teaser__link::after
-        border-right: 1px solid var(--col-neutral-20)
-        border-bottom: 1px solid var(--col-neutral-20)
-
     .teaser__title
         font-size: 2em
 
@@ -402,3 +402,15 @@ menu
         margin-right: .2em
         float: left
 
+// UTILITIES
+
+.chevron__right
+    &::after
+        display: inline-block
+        content: ''
+        border-bottom: 1px solid var(--col-neutral-20)
+        border-right: 1px solid var(--col-neutral-20)
+        transform: rotate(-45deg)
+        height: .75em
+        width: .75em
+        margin-left: .25em
