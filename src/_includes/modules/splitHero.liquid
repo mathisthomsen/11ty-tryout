@@ -1,8 +1,9 @@
 <article class="teaser teaserSplitHero">
     <img class="teaser__image" src="/assets/{{article.data.image}}" alt="Teaser Image">
     <section class="teaser__content">
-        <h3 class="teaser__title">{{article.data.title}}</h3>
+        <div class="teaser__tag"><h3>{{article.data.category}}</h3></div> 
+        <h2 class="teaser__title">{{article.data.title}}</h2>
         <p class="teaser__copy">{{article.data.description}}</p>
-        <a href="{{article.url}}" class="teaser__link">Continue</a>
+        {% include atoms/moreLink %}
     </section>
 </article>

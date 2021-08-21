@@ -2,14 +2,14 @@
 
     <ul>
 
-        <li class="breadcrumb__element chevron__right"><a href="">Home</a></li>
+        <li class="breadcrumb__element chevron__right"><a href="/">Home</a></li>
         {% if pageType == 'category' %}
-            <li class="breadcrumb__element"><span aria-current="page">Category</span></li>
+            <li class="breadcrumb__element"><span aria-current="page">{{tag}}</span></li>
         {% endif %}
         
         {% if pageType == 'article' %}
-             <li class="breadcrumb__element chevron__right"><a href="">Category</a></li>
-            <li class="breadcrumb__element"><span aria-current="page">Product</span></li>
+             <li class="breadcrumb__element chevron__right"><a href="/{{category}}">{{category}}</a></li>
+            <li class="breadcrumb__element"><span aria-current="page">{{title}}</span></li>
         {% endif %}
         
     </ul>

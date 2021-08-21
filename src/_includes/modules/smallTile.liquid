@@ -3,6 +3,7 @@
     <div class="smallTile__content">
         <h2 class="teaser__title">{{article.data.title}}</h2>
         <p class="teaser__copy">{{article.data.description}}</p>
-        <a href="{{article.url}}" class="teaser__link chevron__right">Continue</a>
+        <!-- <a href="{{article.url}}" class="teaser__link chevron__right">Continue</a> -->
+        {% include atoms/moreLink %}
     </div>
 </article>

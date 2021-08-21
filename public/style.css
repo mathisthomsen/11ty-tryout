@@ -24,6 +24,9 @@ body, div, header, main, footer, section, article, ul, ol, li, a, h1, h2, h3, p,
   -webkit-margin-before: 0;
           margin-block-start: 0; }
 
+h1, h2, h3, h4 {
+  font-weight: 400; }
+
 img {
   max-width: 100%;
   -o-object-fit: cover;
@@ -176,6 +179,8 @@ menu {
 .breadcrumb {
   color: var(--col-neutral-600);
   margin-bottom: 1rem; }
+  .breadcrumb + .articleHeader {
+    margin-top: 3rem; }
 
 .breadcrumb > ul {
   display: -webkit-box;
@@ -184,13 +189,19 @@ menu {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
-          flex-direction: row; }
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
 
 .breadcrumb__element {
   list-style: none; }
 
 .breadcrumb__element + .breadcrumb__element {
   margin-left: .75rem; }
+
+[aria-current="page"] {
+  font-weight: 800; }
 
 .categoryTitle {
   font-size: 56px;
@@ -245,19 +256,33 @@ menu {
     .teaserSplitHero {
       -ms-grid-columns: 1fr 1fr;
           grid-template-columns: 1fr 1fr; } }
+  .teaserSplitHero .teaser__title {
+    font-size: 4rem;
+    font-family: "Times New Roman", serif; }
+  .teaserSplitHero .teaser__image {
+    height: 500px; }
 
 .teaser__content {
   max-width: 580px;
-  padding: 2rem;
-  background-color: var(--col-neutral-20);
-  -webkit-box-shadow: 0 3px 10px var(--col-neutral-80);
-          box-shadow: 0 3px 10px var(--col-neutral-80); }
+  padding: 0 2rem; }
+  @media screen and (min-width: 1024px) {
+    .teaser__content {
+      padding: 2rem; } }
+
+.teaser__tag {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: .25em .5em;
+  font-size: 1em;
+  background: var(--col-accent-50); }
+  .teaser__tag h3 {
+    font-weight: 800; }
 
 .teaser__title {
   font-size: 1.5rem;
   font-weight: 400;
-  margin-bottom: .25em;
-  color: var(--col-neutral-00); }
+  margin-bottom: .25em; }
   @media screen and (min-width: 600px) {
     .teaser__title {
       font-size: 2.5rem;
@@ -265,15 +290,14 @@ menu {
 
 .teaser__copy {
   font-size: 1rem;
-  line-height: 1.5;
-  color: var(--col-neutral-00); }
+  line-height: 1.5; }
   @media screen and (min-width: 600px) {
     .teaser__copy {
       font-size: 1.25rem; } }
 
 .teaser__link {
   display: inline-block;
-  color: var(--col-neutral-00);
+  color: currenColor;
   font-size: 1.25rem;
   text-decoration: none;
   margin-top: 1em; }
@@ -352,13 +376,48 @@ menu {
   grid-column: 1 / -1;
   background-color: grey;
   position: relative;
-  height: 450px; }
+  height: 450px;
+  position: relative; }
   @media screen and (min-width: 1024px) {
     .mediumTile {
       grid-column: auto / span 6; } }
   @media screen and (min-width: 1600px) {
     .mediumTile {
       grid-column: auto / span 4; } }
+  .mediumTile::before {
+    position: absolute;
+    content: '';
+    z-index: 10;
+    border-bottom: 2px solid var(--col-accent-50);
+    border-right: 2px solid var(--col-accent-50);
+    opacity: .7;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    height: 1em;
+    width: 1em;
+    right: 2.5em;
+    bottom: 2.2em; }
+  .mediumTile::after {
+    position: absolute;
+    content: '';
+    z-index: 10;
+    border-bottom: 2px solid var(--col-accent-50);
+    border-right: 2px solid var(--col-accent-50);
+    opacity: .7;
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+            transform: rotate(-45deg) translate(0, 0);
+    height: 1em;
+    width: 1em;
+    right: 2em;
+    bottom: 2.2em;
+    -webkit-transition: -webkit-transform 1200ms ease-in-out;
+    transition: -webkit-transform 1200ms ease-in-out;
+    transition: transform 1200ms ease-in-out;
+    transition: transform 1200ms ease-in-out, -webkit-transform 1200ms ease-in-out; }
+  @media screen and (pointer: fine) {
+    .mediumTile:hover::after {
+      -webkit-transform: rotate(-45deg) translate(0.5em, 0.5em);
+              transform: rotate(-45deg) translate(0.5em, 0.5em); } }
 
 .mediumTile__image {
   width: 100%;
@@ -452,7 +511,7 @@ menu {
   padding: 1rem; }
   .articleMain p + p {
     margin-top: 1em; }
-  .articleMain p:first-of-type::first-letter {
+  .articleMain > p:first-of-type::first-letter {
     font-size: 3em;
     line-height: 1;
     font-weight: 600;
@@ -466,7 +525,10 @@ menu {
   border-right: 1px solid var(--col-neutral-20);
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  height: .75em;
-  width: .75em;
+  height: .65em;
+  width: .65em;
   margin-left: .25em; }
+
+.footnotes-list {
+  padding-left: 1.5rem; }
 /*# sourceMappingURL=style.css.map */

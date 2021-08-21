@@ -25,6 +25,9 @@ body, div, header, main, footer, section, article, ul, ol, li, a, h1, h2, h3, p,
     margin-block-end: 0
     margin-block-start: 0
 
+h1,h2,h3,h4
+    font-weight: 400
+
 img
     max-width: 100%
     object-fit: cover
@@ -138,15 +141,22 @@ menu
     color: var(--col-neutral-600)
     margin-bottom: 1rem
 
+    + .articleHeader
+        margin-top: 3rem
+
 .breadcrumb > ul
     display: flex
     flex-direction: row
+    align-items: flex-end
     
 .breadcrumb__element
     list-style: none
 
 .breadcrumb__element + .breadcrumb__element
     margin-left: .75rem
+
+[aria-current="page"]
+    font-weight: 800
 
 
 // HOME
@@ -202,17 +212,36 @@ menu
     @media screen and (min-width: 1024px)
         grid-template-columns: 1fr 1fr
 
+    .teaser__title
+        font-size: 4rem
+        font-family: "Times New Roman", serif
+
+    .teaser__image
+        height: 500px
+
+    
+
 .teaser__content
     max-width: 580px
-    padding: 2rem
-    background-color: var(--col-neutral-20)
-    box-shadow: 0 3px 10px var(--col-neutral-80)
+    padding: 0 2rem
+
+    @media screen and (min-width: 1024px)
+        padding: 2rem
+
+.teaser__tag
+    width: min-content
+    padding: .25em .5em
+    font-size: 1em
+    background: var(--col-accent-50)
+
+    h3
+        font-weight: 800
+
 
 .teaser__title
     font-size: 1.5rem
     font-weight: 400
     margin-bottom: .25em
-    color: var(--col-neutral-00)
 
     @media screen and (min-width: 600px)
         font-size: 2.5rem
@@ -222,14 +251,13 @@ menu
 .teaser__copy
     font-size: 1rem
     line-height: 1.5
-    color: var(--col-neutral-00)
 
     @media screen and (min-width: 600px)
         font-size: 1.25rem
 
 .teaser__link
     display: inline-block
-    color: var(--col-neutral-00)
+    color: currenColor
     font-size: 1.25rem
     text-decoration: none
     margin-top: 1em
@@ -298,17 +326,52 @@ menu
     z-index: 4
 
 .mediumTile
-    //grid-row: 1 / span 1
     grid-column: 1 / -1
     background-color: grey
     position: relative
     height: 450px
+    position: relative
 
     @media screen and (min-width: 1024px)
         grid-column: auto / span 6
 
     @media screen and (min-width: 1600px)
         grid-column: auto / span 4
+
+    &::before
+        position: absolute
+        content: ''
+        z-index: 10
+        border-bottom: 2px solid var(--col-accent-50)
+        border-right: 2px solid var(--col-accent-50)
+        opacity: .7
+        transform: rotate(-45deg)
+        height: 1em
+        width: 1em
+        right: 2.5em
+        bottom: 2.2em
+
+    &::after
+        position: absolute
+        content: ''
+        z-index: 10
+        border-bottom: 2px solid var(--col-accent-50)
+        border-right: 2px solid var(--col-accent-50)
+        opacity: .7
+        transform: rotate(-45deg) translate(0,0)
+        height: 1em
+        width: 1em
+        right: 2em
+        bottom: 2.2em
+        transition: transform 1200ms ease-in-out
+
+    @media screen and (pointer: fine)
+        &:hover
+            &::after
+                transform: rotate(-45deg) translate(.5em,.5em)
+
+        
+
 
 .mediumTile__image
     width: 100%
@@ -395,7 +458,7 @@ menu
     p + p
         margin-top: 1em
 
-    p:first-of-type::first-letter
+    >p:first-of-type::first-letter
         font-size: 3em
         line-height: 1
         font-weight: 600
@@ -411,6 +474,9 @@ menu
         border-bottom: 1px solid var(--col-neutral-20)
         border-right: 1px solid var(--col-neutral-20)
         transform: rotate(-45deg)
-        height: .75em
-        width: .75em
+        height: .65em
+        width: .65em
         margin-left: .25em
+
+.footnotes-list
+    padding-left: 1.5rem

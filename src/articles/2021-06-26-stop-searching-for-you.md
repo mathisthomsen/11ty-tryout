@@ -2,9 +2,9 @@
 title: Stop searching for you
 author: Mathis Thomsen
 tags:
-    - meta
+    - Meta
     - article
-category: meta
+category: Meta
 description: Was ist so besonders an dir, dass du glaubst es lohne sich gefunden zu werden?
 image: image-11.jpg
 ---

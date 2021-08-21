@@ -2,11 +2,11 @@
 title: Home
 layout: 'base.liquid'
 ---
-        <section class="teaserList teaserTiles">
+        <!-- <section class="teaserList teaserTiles"> -->
             {%- for article in collections.featured -%}
-                {% include modules/bigTile %}
+                {% include modules/splitHero %}
             {%- endfor -%}
-        </section>  
+        <!-- </section>   -->
 
        
         {%- for tag in collections.tagsList -%}
@@ -14,8 +14,18 @@ layout: 'base.liquid'
             <h2 class="categoryTitle">{{ tag }}</h2>
             <section class="teaserList teaserTiles noMargin">
 
+                {% assign count = 1 %}
+
                 {% for article in collections[tag] %}
-                    {% include modules/mediumTile %}
+                    {% if article.data.tags contains 'featured' and count <= 4 %}
+                        {% continue %}
+                    {% elsif count <= 4 %}
+                        {% include modules/mediumTile %}
+                        {% assign count = count | | plus: 1 %}
+                    {% else %}
+                        {% break %}
+                    {% endif %}
+                    
                 {% endfor %}
     
                 
