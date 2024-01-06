@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{tag}}</title>
+    <title>Über Web & Flow</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -50,6 +50,11 @@
                     <a href="/UX">UX</a> 
                 </li>
                 
+                
+                    <li class="menuList__item" role="menuitem">
+                        <a href="/uber-web-and-flow">Über Web & Flow</a> 
+                    </li>
+                
             </ul>
         </nav>
         <nav>
@@ -61,65 +66,29 @@
     </div>
 </header>
     <main data-menustate="closed">
-        <nav aria-label="breadcrumb" class="breadcrumb">
+        
+<nav aria-label="breadcrumb" class="breadcrumb">
 
     <ul>
 
         <li class="breadcrumb__element chevron__right"><a href="/">Home</a></li>
-        
-            <li class="breadcrumb__element"><span aria-current="page">UX</span></li>
         
         
         
         
     </ul>
 </nav>
-
-<h1 class="categoryTitle">UX</h1>
-<section class="teaserList teaserTiles">
-
-    
-        
-            <article class="teaser bigTile">
-    <a class="bigTile__link" href="/UX/ux-verfuhrt-mensch/" title="UX verführt Mensch"></a>
-    <div class="bigTile__content">
-        <h2 class="teaser__title">UX verführt Mensch</h2>
-        <p class="teaser__copy">UX optimiert Oberflächen und Interfaces, damit sie leichter zu benutzen sind. Geht das soweit, dass sie ihre Benutzer manipuliert und gegen ihre Natur verführt?</p>
+<div class="articleHeader"> 
+    <div class="articleHeader__content">
+        <h1 class="articleHeader__title">Über Web & Flow</h1>
+        <p class="articleHeader__description">Kultur ist einfach, aber sehr schwierig in strukturierter Arbeit zu handhaben. Daher verfolgen die meisten Designer einen reduktionistischen Ansatz - ein Fehler.</p>
     </div>
-    <span class="bigTile__gradient"></span>
-    <img src="/assets/image-10.jpg" alt="UX verführt Mensch" class="bigTile__image">       
-</article>
-        
-        
-    
-        
-            <article class="teaser smallTile">
-    <img src="/assets/image-12.jpg" alt="Was UX über unsere Kultur aussagt" class="smallTile__image">
-    <div class="smallTile__content">
-        <h2 class="teaser__title">Was UX über unsere Kultur aussagt</h2>
-        <p class="teaser__copy">UX reagiert auf Kultur - UX schafft Kultur - aber was sagt die Existenz und Wichtigkeit von UX über unsere Kultur aus?</p>
-        <!-- <a href="/UX/was-ux-uber-unsere-kultur-aussagt/" class="teaser__link chevron__right">Continue</a> -->
-        <a href="/UX/was-ux-uber-unsere-kultur-aussagt/" class="teaser__link chevron__right">Weiterlesen</a>
-    </div>
-</article>
-        
-        
-    
-        
-            <article class="teaser smallTile">
-    <img src="/assets/image-13.jpg" alt="UX Design ist tot. Lang lebe UX Design." class="smallTile__image">
-    <div class="smallTile__content">
-        <h2 class="teaser__title">UX Design ist tot. Lang lebe UX Design.</h2>
-        <p class="teaser__copy">Alles UX. Experiences überall. Design galore. Ich kämpfe seit ich einer bin mit dem Titel des UX Designers. Also habe ich ihn einmal auseinandergenommen und wieder zusammen gesetzt. TL;DR UX Design ist Nonsens, UX Designer sind ziemlich wichtig.</p>
-        <!-- <a href="/UX/ux-design-ist-tot.-lang-lebe-ux-design./" class="teaser__link chevron__right">Continue</a> -->
-        <a href="/UX/ux-design-ist-tot.-lang-lebe-ux-design./" class="teaser__link chevron__right">Weiterlesen</a>
-    </div>
-</article>
-        
-        
-    
+</div>
+<div class="articleMain">
 
-</section>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloremque quo dolor soluta voluptatum aperiam alias commodi quasi excepturi nulla recusandae architecto natus, nesciunt quam mollitia! Necessitatibus veniam nesciunt natus quam consequatur quisquam alias velit illum deleniti saepe? Corporis, vel adipisci. Tempora ea, doloremque natus nostrum maxime eos quae perferendis.
+
+</div>
     </main>
     <footer class="footer">
 

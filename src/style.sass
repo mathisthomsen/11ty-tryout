@@ -1,6 +1,8 @@
 // VAR
     
-html
+:root
+    // COLORS
+
     --col-neutral-00: hsl(0, 0%, 100%)
     --col-neutral-80: hsl(0, 0%, 80%)
     --col-neutral-60: hsl(0, 0%, 60%)
@@ -8,6 +10,19 @@ html
     --col-neutral-20: hsl(0, 0%, 20%)
     --col-neutral-10: hsl(0, 0%, 10%)
     --col-accent-50: hsl(41, 100%, 50%)
+    --menu-transition: 300ms all ease-out
+
+    // BREAKPOINTS
+
+    --bp-small: 560px
+    --bp-medium: 768px
+    --bp-large: 1024px
+
+    // TOKENS
+
+    --menu-bg-color: var(--col-neutral-10)
+
+
 
 //GENERAL & RESET
   
@@ -15,6 +30,9 @@ body
     font-size: 16px
     font-family: 'Helvetica Neue', sans-serif
     font-weight: 300
+
+    &[data-menustate = "open"]
+        overflow: hidden
 
 *, *::after, *::before
     box-sizing: border-box
@@ -35,27 +53,29 @@ img
 header
     width: 100%
     padding: 1rem 0
-    margin-bottom: 3rem
-    background-color: var(--col-neutral-20)
+    margin-block-end: 1rem
+    background-color: var(--menu-bg-color)
 
 main
     display: flex
     flex-direction: column
     align-items: center
+    overflow: hidden
+    opacity: 1
+    transform: translateX(0)
+    transition: var(--menu-transition)
+    z-index: 1
+    padding-block-end: 1rem
+
+    &[data-menustate = "open"]
+        opacity: .25
+        transform: translateX(-50%)
 
 a
     text-decoration: none
     color: currentColor
 
 // HEADER
-
-.logoWrapper
-    display: flex
-    align-items: center
-
-.logo
-    overflow: visible
-    object-fit: contain
 
 .headerWrapper
     max-width: 1200px
@@ -65,52 +85,148 @@ a
     margin: 0 auto
     padding: 0 1rem
 
-menu
+    @media screen and (min-width: 768px)
+        justify-content: center
+
+.logoWrapper
+    display: flex
+    align-items: center
+    z-index: 12
+
+    @media screen and (min-width: 768px)
+        margin-inline-end: 4rem
+
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        z-index: -1
+        transform: rotate(17deg) translate(64px, -4px)
+        width: 200px
+        height: 50px
+        background-image: url('assets/brush-stroke-banner-8.svg')
+        background-size: 200px
+        background-repeat: no-repeat
+        background-position: center
+
+.logo
+    overflow: visible
+    object-fit: contain
+    
+
+nav#mainNav
     display: flex
     align-items: center
     flex-direction: column
     right: 1rem
     top: 0
-    background: var(--col-neutral-20)
-    z-index: 10
-
-    @media screen and (min-width: 468px)
-        position: static
-        padding: 1rem
-        position:
-
+    background-color: var(--menu-bg-color)
+    padding: 1rem    
+    z-index: 11    
 
 .menuList
     list-style: none
+    z-index: 10
     display: flex
     flex-direction: column
-    height: 0px
-    opacity: 0
+    justify-content: center
+    align-items: center
 
-    @media screen and (min-width: 468px)
-        display: flex
+    //mobile
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 75%
+    background-color: var(--menu-bg-color)
+    transition: var(--menu-transition)
+    transform-origin: right center
+
+    @media screen and (max-width: 560px)
+
+        &[data-state = 'closed']
+            transform: scale(0, 1)
+
+        &[data-state = 'open']
+            transform: scale(1, 1)
+
+    .menuList__item + .menuList__item
+        margin-top: 2em
+
+    @media screen and (min-width: 560px)
         flex-direction: row
-        height: auto
-        opacity: 1
+        position: initial
+        width: initial
+        transform: translateX(0)
 
         .menuList__item + .menuList__item
+            margin-top: 0
             margin-left: 2rem
-
-#menuToggle
-    display: none
-
-#menuToggle__label
-    color: white
-    @media screen and (min-width: 468px)
-        display: none
-
-#menuToggle:checked + .menuList
-    height: auto
-    opacity: 1
 
 .menuList__item
     font-size: 1.25rem
     color: var(--col-neutral-80)
+
+#burgerMenu
+    z-index: 12
+    background: none
+    border: none
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    height: 2rem
+    width: 2.5rem
+    padding: 0
+
+    @media screen and (min-width: 560px)
+        display: none
+
+    .burgerLine
+        height: 2px
+        background-color: var(--col-neutral-80)
+        transition: all 1s ease
+
+    &[data-state="closed"]
+        justify-content: space-between
+    
+        .line1
+            width: 100%
+            transform-origin: center center
+            transform: rotate(0deg)
+
+        .line2
+            width: 100%
+            transform-origin: center center
+            transform: rotate(0deg)
+
+        .line3
+            width: 100%
+            opacity: 1
+            transform-origin: center center
+            transform: rotate(0deg)
+            align-self: flex-end
+
+    &[data-state="open"]
+        justify-content: center
+    
+        .line1
+            width: 100%
+            transform: rotate(45deg)
+
+        .line2
+            width: 100%
+            transform: rotate(-45deg)
+
+        .line3
+            width: 100%
+            opacity: 0
+            transform: rotate(45deg)
+            align-self: flex-end
+
+// .burgerLine + .burgerLine
+//     margin-top: 8px
+
+
 
 // FOOTER
 
@@ -139,7 +255,7 @@ menu
 
 .breadcrumb
     color: var(--col-neutral-600)
-    margin-bottom: 1rem
+    padding: 0 1rem
 
     + .articleHeader
         margin-top: 3rem
@@ -148,9 +264,13 @@ menu
     display: flex
     flex-direction: row
     align-items: flex-end
+    justify-content: center
+    flex-wrap: wrap
     
 .breadcrumb__element
     list-style: none
+    line-height: 1.5em
+    text-align: center
 
 .breadcrumb__element + .breadcrumb__element
     margin-left: .75rem
@@ -163,6 +283,7 @@ menu
 
 .categoryTitle
     font-size: 56px
+    position: relative
     font-family: 'Times New Roman', serif
     color: var(--col-neutral-20)
     border-top: 1px solid currentColor
@@ -172,32 +293,67 @@ menu
     margin: 2em 0
     letter-spacing: -1.2px
 
+    &::before
+        content: ''
+        display: inline
+        position: absolute
+        z-index: -1
+        left: 0
+        transform: rotate(-27deg) translate(30px, -20px)
+        width: 300px
+        height: 75px
+        background-image: url('assets/brush-stroke-banner-1.svg')
+        background-size: 300px
+        background-repeat: no-repeat
+        background-position: center
+
 .categoryLink
     margin-top: 3rem
     font-size: 2rem
     text-decoration: none
     color: var(--col-neutral-20)
     overflow: visible
+    z-index: 1
     position: relative
-    font-family: 'Times New Roman', serif
+    //font-family: 'Times New Roman', serif
+    padding: .5em 1em
 
-    &::before
+    &::after
         content: ''
-        display: inline-block
         position: absolute
-        width: 40px
-        height: 1px
-        outline: 1px solid transparent
-        background-color: currentColor
+        top: 0
         bottom: 0
-        left: 50%
-        transform: translate(-50%, 4px)
+        right: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+        border: 1px solid black
+        transform: rotate(-11deg) skew(-11deg)
+        transition: all 500ms ease
 
     &:hover
-        &::before
-            background-color: var(--col-accent-50)
-            outline-color: var(--col-accent-50)
-            transform: ranslate(-50%, 32px)
+        &::after
+            transform: rotate(-11deg) skew(11deg)
+
+
+    // &::before
+    //     content: ''
+    //     display: inline-block
+    //     position: absolute
+    //     width: 40px
+    //     height: 1px
+    //     outline: 1px solid transparent
+    //     background-color: currentColor
+    //     bottom: 0
+    //     left: 50%
+    //     transform: translate(-50%, 4px)
+
+    // &:hover
+    //     &::before
+    //         background-color: var(--col-accent-50)
+    //         outline-color: var(--col-accent-50)
+    //         transform: ranslate(-50%, 32px)
 
 .teaser
     overflow: hidden
@@ -224,9 +380,11 @@ menu
 .teaser__content
     max-width: 580px
     padding: 0 2rem
+    justify-self: center
 
     @media screen and (min-width: 1024px)
         padding: 2rem
+        justify-self: initial
 
 .teaser__tag
     width: min-content
@@ -256,11 +414,29 @@ menu
         font-size: 1.25rem
 
 .teaser__link
+    position: relative
     display: inline-block
     color: currenColor
     font-size: 1.25rem
     text-decoration: none
     margin-top: 1em
+
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        bottom: -4px
+        left: 0px
+        width: 100%
+        height: 1px
+        background-color: var(--col-neutral-40)
+        transform: rotateY(90deg)
+        transition: all 150ms linear
+   
+    
+    &:hover::before
+        transform: rotateY(0deg)
+
 
 .teaserTiles
     display: grid
@@ -273,9 +449,6 @@ menu
 
     @media screen and (min-width:1200px)
         width: 1200px
-
-    &.noMargin
-        width: 100%
 
 .bigTile
     grid-row: 1 / span 1
@@ -305,7 +478,7 @@ menu
     bottom: 0
     left: 0
     right: 0
-    height: 50%
+    height: 70%
     background: linear-gradient(transparent, var(--col-neutral-10))
 
 .bigTile__content
@@ -350,6 +523,7 @@ menu
         width: 1em
         right: 2.5em
         bottom: 2.2em
+        transition: transform 1200ms ease-in-out
 
     &::after
         position: absolute
@@ -365,13 +539,13 @@ menu
         bottom: 2.2em
         transition: transform 1200ms ease-in-out
 
-    @media screen and (pointer: fine)
+    @media screen and (hover: hover)
         &:hover
             &::after
                 transform: rotate(-45deg) translate(.5em,.5em)
 
-        
-
+            &::before
+                transform: rotate(135deg)
 
 .mediumTile__image
     width: 100%
@@ -434,7 +608,7 @@ menu
         width: 400px
 
     @media screen and (min-width: 769px)
-        margin-right: 1rem
+        margin-right: 2rem
 
 .articleHeader__content
     max-width: 48ch
@@ -480,3 +654,13 @@ menu
 
 .footnotes-list
     padding-left: 1.5rem
+
+.noMargin
+    width: 100%
+
+.flex-col
+    display: flex
+    flex-direction: column
+
+.centered
+    align-items: center

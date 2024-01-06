@@ -1,5 +1,6 @@
 ---
 layout: 'base.liquid'
+title: "{{tag}}"
 pageType: category
 pagination:
   data: collections
@@ -10,7 +11,7 @@ pagination:
     - article
     - all
     - tagsList
-permalink: "{{ tag }}/"
+permalink: "{{ tag | slug }}"
 ---
 {% include modules/breadcrumb %}
 

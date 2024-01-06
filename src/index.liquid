@@ -1,5 +1,6 @@
 ---
-title: Home
+title: Web and Flow
+metaDesc: Web and Flow ist ein Magazin über UX, Design und Kultur.
 layout: 'base.liquid'
 ---
         <!-- <section class="teaserList teaserTiles"> -->
@@ -11,22 +12,24 @@ layout: 'base.liquid'
        
         {%- for tag in collections.tagsList -%}
 
-            <h2 class="categoryTitle">{{ tag }}</h2>
-            <section class="teaserList teaserTiles noMargin">
+            
+            <section class="noMargin flex-col centered">
+                <h2 class="categoryTitle">{{ tag }}</h2>
+                <div class="teaserList teaserTiles noMargin">
+                    {% assign count = 1 %}
 
-                {% assign count = 1 %}
-
-                {% for article in collections[tag] %}
-                    {% if article.data.tags contains 'featured' and count <= 4 %}
-                        {% continue %}
-                    {% elsif count <= 4 %}
-                        {% include modules/mediumTile %}
-                        {% assign count = count | | plus: 1 %}
-                    {% else %}
-                        {% break %}
-                    {% endif %}
-                    
-                {% endfor %}
+                    {% for article in collections[tag] %}
+                        {% if article.data.tags contains 'featured' and count <= 4 %}
+                            {% continue %}
+                        {% elsif count <= 4 %}
+                            {% include modules/mediumTile %}
+                            {% assign count = count | | plus: 1 %}
+                        {% else %}
+                            {% break %}
+                        {% endif %}
+                        
+                    {% endfor %}
+                </div>
     
                 
             </section>

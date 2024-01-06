@@ -1,0 +1,44 @@
+<header>
+    <div class="headerWrapper">
+        <a href="/" class="logoWrapper">
+            <img src="/assets/logo.svg" class="logo" alt="Logo">
+        </a>
+        <nav id="mainNav" role="navigation">
+            <button
+                id="burgerMenu"
+                data-state="closed"
+                aria-label="Main menu"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="menu"
+                focusable="false">
+                <div class="burgerLine line1"></div>
+                <div class="burgerLine line2"></div>
+                <div class="burgerLine line3"></div>
+            </button>
+            <ul
+            class="menuList"
+            data-state="closed"
+            role="menu"
+            id="menu"
+            aria-labelledby="burgerMenu">
+                {% for listItem in collections.tagsList %}
+                <li class="menuList__item" role="menuitem">
+                    <a href="/{{listItem}}">{{listItem}}</a> 
+                </li>
+                {% endfor %}
+                {% for page in collections.pages %}
+                    <li class="menuList__item" role="menuitem">
+                        <a href="/{{page.data.title | slug}}">{{page.data.title}}</a> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('ar')">Deutsch</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

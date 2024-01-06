@@ -4,41 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>{{tag}}</title>
+    <meta name="description" content="">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body data-menustate = "closed">
     <header>
     <div class="headerWrapper">
         <a href="/" class="logoWrapper">
             <img src="/assets/logo.svg" class="logo" alt="Logo">
         </a>
-        <menu>
-            <label for="menuToggle" id="menuToggle__label">toggle</label>
-            <input type="checkbox" name="menuToggle" id="menuToggle">
-            <ul class="menuList">
+        <nav id="mainNav" role="navigation">
+            <button
+                id="burgerMenu"
+                data-state="closed"
+                aria-label="Main menu"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="menu"
+                focusable="false">
+                <div class="burgerLine line1"></div>
+                <div class="burgerLine line2"></div>
+                <div class="burgerLine line3"></div>
+            </button>
+            <ul
+            class="menuList"
+            data-state="closed"
+            role="menu"
+            id="menu"
+            aria-labelledby="burgerMenu">
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Design">Design</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Kultur">Kultur</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Meta">Meta</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/UX">UX</a> 
                 </li>
                 
             </ul>
-        </menu>
+        </nav>
+        <nav>
+            <ul>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('ar')">Deutsch</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
-    <main>
+    <main data-menustate="closed">
         <nav aria-label="breadcrumb" class="breadcrumb">
 
     <ul>
@@ -59,9 +81,9 @@
     
         
             <article class="teaser bigTile">
-    <a class="bigTile__link" href="/Kultur/kultur-und-ethnographie/"></a>
+    <a class="bigTile__link" href="/Kultur/kultur-und-ethnographie/" title="Kultur und Ethnographie"></a>
     <div class="bigTile__content">
-        <h3 class="teaser__title">Kultur und Ethnographie</h3>
+        <h2 class="teaser__title">Kultur und Ethnographie</h2>
         <p class="teaser__copy">Ethnographen benutzen ganz spezielle Modelle und Methodiken, um Kultur greibar und verstehbar zu machen. Ein sehr wertvoller Fundus bewehrter Werkzeuge für Designer, UXer und Product Owner.</p>
     </div>
     <span class="bigTile__gradient"></span>
@@ -77,7 +99,7 @@
         <h2 class="teaser__title">Was Kultur ist</h2>
         <p class="teaser__copy">...und was sie nicht ist. Was sie tut, woher sie kommt und warum sie wichtig ist.</p>
         <!-- <a href="/Kultur/was-kultur-ist/" class="teaser__link chevron__right">Continue</a> -->
-        <a href="/Kultur/was-kultur-ist/" class="teaser__link chevron__right">Continue</a>
+        <a href="/Kultur/was-kultur-ist/" class="teaser__link chevron__right">Weiterlesen</a>
     </div>
 </article>
         
@@ -98,5 +120,6 @@
     </ul>
 
 </footer>
+    <script src="/main.js"></script>
 </body>
 </html>

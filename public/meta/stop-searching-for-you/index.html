@@ -5,40 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop searching for you</title>
+    <meta name="description" content="">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body data-menustate = "closed">
     <header>
     <div class="headerWrapper">
         <a href="/" class="logoWrapper">
             <img src="/assets/logo.svg" class="logo" alt="Logo">
         </a>
-        <menu>
-            <label for="menuToggle" id="menuToggle__label">toggle</label>
-            <input type="checkbox" name="menuToggle" id="menuToggle">
-            <ul class="menuList">
+        <nav id="mainNav" role="navigation">
+            <button
+                id="burgerMenu"
+                data-state="closed"
+                aria-label="Main menu"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="menu"
+                focusable="false">
+                <div class="burgerLine line1"></div>
+                <div class="burgerLine line2"></div>
+                <div class="burgerLine line3"></div>
+            </button>
+            <ul
+            class="menuList"
+            data-state="closed"
+            role="menu"
+            id="menu"
+            aria-labelledby="burgerMenu">
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Design">Design</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Kultur">Kultur</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Meta">Meta</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/UX">UX</a> 
                 </li>
                 
+                
+                    <li class="menuList__item" role="menuitem">
+                        <a href="/uber-web-and-flow">Über Web & Flow</a> 
+                    </li>
+                
             </ul>
-        </menu>
+        </nav>
+        <nav>
+            <ul>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('ar')">Deutsch</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
-    <main>
+    <main data-menustate="closed">
         
 <nav aria-label="breadcrumb" class="breadcrumb">
 
@@ -84,5 +111,6 @@
     </ul>
 
 </footer>
+    <script src="/main.js"></script>
 </body>
 </html>

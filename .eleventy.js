@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig){
 
     eleventyConfig.addPassthroughCopy('./src/style.css');
+    eleventyConfig.addPassthroughCopy('./src/main.js');
     eleventyConfig.addPassthroughCopy('./src/assets');
     let markdownIt = require("markdown-it");
     let markdownItFootnote = require("markdown-it-footnote");
@@ -17,7 +18,7 @@ module.exports = function(eleventyConfig){
         collectionApi.getAll().forEach((item) => {
           if (!item.data.tags) return
           item.data.tags
-            .filter((tag) => !['all', 'featured', 'article'].includes(tag))
+            .filter((tag) => !['all', 'featured', 'article', 'pages'].includes(tag))
             .forEach((tag) => tagsSet.add(tag))
         })
         return [...tagsSet].sort((a, b) => a.localeCompare(b))

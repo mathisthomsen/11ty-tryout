@@ -4,58 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Web and Flow</title>
+    <meta name="description" content="Web and Flow ist ein Magazin über UX, Design und Kultur.">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body data-menustate = "closed">
     <header>
     <div class="headerWrapper">
         <a href="/" class="logoWrapper">
             <img src="/assets/logo.svg" class="logo" alt="Logo">
         </a>
-        <menu>
-            <label for="menuToggle" id="menuToggle__label">toggle</label>
-            <input type="checkbox" name="menuToggle" id="menuToggle">
-            <ul class="menuList">
+        <nav id="mainNav" role="navigation">
+            <button
+                id="burgerMenu"
+                data-state="closed"
+                aria-label="Main menu"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="menu"
+                focusable="false">
+                <div class="burgerLine line1"></div>
+                <div class="burgerLine line2"></div>
+                <div class="burgerLine line3"></div>
+            </button>
+            <ul
+            class="menuList"
+            data-state="closed"
+            role="menu"
+            id="menu"
+            aria-labelledby="burgerMenu">
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Design">Design</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Kultur">Kultur</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/Meta">Meta</a> 
                 </li>
                 
-                <li class="menuList__item">
+                <li class="menuList__item" role="menuitem">
                     <a href="/UX">UX</a> 
                 </li>
                 
+                
+                    <li class="menuList__item" role="menuitem">
+                        <a href="/uber-web-and-flow">Über Web & Flow</a> 
+                    </li>
+                
             </ul>
-        </menu>
+        </nav>
+        <nav>
+            <ul>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
+                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('ar')">Deutsch</a></li>
+            </ul>
+        </nav>
     </div>
 </header>
-    <main>
+    <main data-menustate="closed">
                 <!-- <section class="teaserList teaserTiles"> --><article class="teaser teaserSplitHero">
     <img class="teaser__image" src="/assets/image-13.jpg" alt="Teaser Image">
     <section class="teaser__content">
-        <div class="teaser__tag"><h3>Design</h3></div> 
-        <h2 class="teaser__title">Humanity Centered Design</h2>
-        <p class="teaser__copy">Design muss sich nicht nur um den einen Menschen bemühen - den einen, der das Produkt benutzt - sondern das Wohl der Menschen in ihrer Gesamtheit.</p>
-        <a href="/Design/humanity-centered-design/" class="teaser__link chevron__right">Continue</a>
+        <div class="teaser__tag"><h3>UX</h3></div> 
+        <h2 class="teaser__title">UX Design ist tot. Lang lebe UX Design.</h2>
+        <p class="teaser__copy">Alles UX. Experiences überall. Design galore. Ich kämpfe seit ich einer bin mit dem Titel des UX Designers. Also habe ich ihn einmal auseinandergenommen und wieder zusammen gesetzt. TL;DR UX Design ist Nonsens, UX Designer sind ziemlich wichtig.</p>
+        <a href="/UX/ux-design-ist-tot.-lang-lebe-ux-design./" class="teaser__link chevron__right">Weiterlesen</a>
     </section>
-</article><!-- </section>   --><h2 class="categoryTitle">Design</h2>
-            <section class="teaserList teaserTiles noMargin">
-
-                
-
-                
+</article><!-- </section>   --><section class="noMargin flex-col centered">
+                <h2 class="categoryTitle">Design</h2>
+                <div class="teaserList teaserTiles noMargin">
                     
-                        <article class="teaser mediumTile">
-    <a href="/Design/design-benutzt-kultur-falsch/" class="mediumTile__link"></a>
+
+                    
+                        
+                            <article class="teaser mediumTile">
+    <a href="/Design/design-benutzt-kultur-falsch/" class="mediumTile__link" title="Design benutzt Kultur falsch"></a>
     <div class="mediumTile__content">
         <h2 class="teaser__title">Design benutzt Kultur falsch</h2>
         <p class="teaser__copy">Kultur ist einfach, aber sehr schwierig in strukturierter Arbeit zu handhaben. Daher verfolgen die meisten Designer einen reduktionistischen Ansatz - ein Fehler.</p>
@@ -64,24 +91,39 @@
     <img src="/assets/image-11.jpg" alt="Design benutzt Kultur falsch" class="mediumTile__image">
     
 </article>
+                            
+                        
                         
                     
+                        
+                            <article class="teaser mediumTile">
+    <a href="/Design/humanity-centered-design/" class="mediumTile__link" title="Humanity Centered Design"></a>
+    <div class="mediumTile__content">
+        <h2 class="teaser__title">Humanity Centered Design</h2>
+        <p class="teaser__copy">Design muss sich nicht nur um den einen Menschen bemühen - den einen, der das Produkt benutzt - sondern das Wohl der Menschen in ihrer Gesamtheit.</p>
+    </div>
+    <span class="mediumTile__gradient"></span>
+    <img src="/assets/image-13.jpg" alt="Humanity Centered Design" class="mediumTile__image">
+    
+</article>
+                            
+                        
+                        
                     
-                
-                    
+                </div>
     
                 
             </section>
 
-            <a href="/Design" class="categoryLink">All Design</a><h2 class="categoryTitle">Kultur</h2>
-            <section class="teaserList teaserTiles noMargin">
-
-                
-
-                
+            <a href="/Design" class="categoryLink">All Design</a><section class="noMargin flex-col centered">
+                <h2 class="categoryTitle">Kultur</h2>
+                <div class="teaserList teaserTiles noMargin">
                     
-                        <article class="teaser mediumTile">
-    <a href="/Kultur/kultur-und-ethnographie/" class="mediumTile__link"></a>
+
+                    
+                        
+                            <article class="teaser mediumTile">
+    <a href="/Kultur/kultur-und-ethnographie/" class="mediumTile__link" title="Kultur und Ethnographie"></a>
     <div class="mediumTile__content">
         <h2 class="teaser__title">Kultur und Ethnographie</h2>
         <p class="teaser__copy">Ethnographen benutzen ganz spezielle Modelle und Methodiken, um Kultur greibar und verstehbar zu machen. Ein sehr wertvoller Fundus bewehrter Werkzeuge für Designer, UXer und Product Owner.</p>
@@ -90,13 +132,13 @@
     <img src="/assets/image-9.jpg" alt="Kultur und Ethnographie" class="mediumTile__image">
     
 </article>
+                            
+                        
                         
                     
-                    
-                
-                    
-                        <article class="teaser mediumTile">
-    <a href="/Kultur/was-kultur-ist/" class="mediumTile__link"></a>
+                        
+                            <article class="teaser mediumTile">
+    <a href="/Kultur/was-kultur-ist/" class="mediumTile__link" title="Was Kultur ist"></a>
     <div class="mediumTile__content">
         <h2 class="teaser__title">Was Kultur ist</h2>
         <p class="teaser__copy">...und was sie nicht ist. Was sie tut, woher sie kommt und warum sie wichtig ist.</p>
@@ -105,23 +147,24 @@
     <img src="/assets/image-8.jpg" alt="Was Kultur ist" class="mediumTile__image">
     
 </article>
+                            
+                        
                         
                     
-                    
-                
+                </div>
     
                 
             </section>
 
-            <a href="/Kultur" class="categoryLink">All Kultur</a><h2 class="categoryTitle">Meta</h2>
-            <section class="teaserList teaserTiles noMargin">
-
-                
-
-                
+            <a href="/Kultur" class="categoryLink">All Kultur</a><section class="noMargin flex-col centered">
+                <h2 class="categoryTitle">Meta</h2>
+                <div class="teaserList teaserTiles noMargin">
                     
-                        <article class="teaser mediumTile">
-    <a href="/Meta/stop-searching-for-you/" class="mediumTile__link"></a>
+
+                    
+                        
+                            <article class="teaser mediumTile">
+    <a href="/Meta/stop-searching-for-you/" class="mediumTile__link" title="Stop searching for you"></a>
     <div class="mediumTile__content">
         <h2 class="teaser__title">Stop searching for you</h2>
         <p class="teaser__copy">Was ist so besonders an dir, dass du glaubst es lohne sich gefunden zu werden?</p>
@@ -130,38 +173,39 @@
     <img src="/assets/image-11.jpg" alt="Stop searching for you" class="mediumTile__image">
     
 </article>
+                            
+                        
                         
                     
-                    
-                
+                </div>
     
                 
             </section>
 
-            <a href="/Meta" class="categoryLink">All Meta</a><h2 class="categoryTitle">UX</h2>
-            <section class="teaserList teaserTiles noMargin">
-
-                
-
-                
+            <a href="/Meta" class="categoryLink">All Meta</a><section class="noMargin flex-col centered">
+                <h2 class="categoryTitle">UX</h2>
+                <div class="teaserList teaserTiles noMargin">
                     
-                        <article class="teaser mediumTile">
-    <a href="/UX/ux-verfuhrt-mensch/" class="mediumTile__link"></a>
+
+                    
+                        
+                            <article class="teaser mediumTile">
+    <a href="/UX/ux-verfuhrt-mensch/" class="mediumTile__link" title="UX verführt Mensch"></a>
     <div class="mediumTile__content">
         <h2 class="teaser__title">UX verführt Mensch</h2>
-        <p class="teaser__copy">UX optimiert oberflächen und Interfaces, damit sie leichter zu benutzen sind. Geht das soweit, dass sie ihre Benutzer manipuliert und gegen ihre Natur verführt?</p>
+        <p class="teaser__copy">UX optimiert Oberflächen und Interfaces, damit sie leichter zu benutzen sind. Geht das soweit, dass sie ihre Benutzer manipuliert und gegen ihre Natur verführt?</p>
     </div>
     <span class="mediumTile__gradient"></span>
     <img src="/assets/image-10.jpg" alt="UX verführt Mensch" class="mediumTile__image">
     
 </article>
+                            
+                        
                         
                     
-                    
-                
-                    
-                        <article class="teaser mediumTile">
-    <a href="/UX/was-ux-uber-unsere-kultur-aussagt/" class="mediumTile__link"></a>
+                        
+                            <article class="teaser mediumTile">
+    <a href="/UX/was-ux-uber-unsere-kultur-aussagt/" class="mediumTile__link" title="Was UX über unsere Kultur aussagt"></a>
     <div class="mediumTile__content">
         <h2 class="teaser__title">Was UX über unsere Kultur aussagt</h2>
         <p class="teaser__copy">UX reagiert auf Kultur - UX schafft Kultur - aber was sagt die Existenz und Wichtigkeit von UX über unsere Kultur aus?</p>
@@ -170,10 +214,12 @@
     <img src="/assets/image-12.jpg" alt="Was UX über unsere Kultur aussagt" class="mediumTile__image">
     
 </article>
+                            
+                        
                         
                     
-                    
-                
+                        
+                </div>
     
                 
             </section>
@@ -192,5 +238,6 @@
     </ul>
 
 </footer>
+    <script src="/main.js"></script>
 </body>
 </html>
