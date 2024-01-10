@@ -57,12 +57,7 @@
                 
             </ul>
         </nav>
-        <nav>
-            <ul>
-                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
-                <li><a class="menuList__item" href="index.html" onclick="changeLanguage('ar')">Deutsch</a></li>
-            </ul>
-        </nav>
+        
     </div>
 </header>
     <main data-menustate="closed">
@@ -127,6 +122,14 @@ Wir sind keine Product Owner oder Projekt Manager oder Entwickler oder Marketer,
         
             <li class="footer__linkList__item"><a href="/kontakt">Kontakt</a></li>
         
+            <li onclick="openLangList()" class="footer__linkList__item language-switch">
+                <button id="langToggle">Language</button>
+                <ul aria-hidden="true" class="language-switch__list" id="langList">
+                    <li><a class="footer__linkList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
+                    <li><a class="footer__linkList__item" href="index.html" onclick="changeLanguage('de')">Deutsch</a></li>
+                </ul>
+
+            </li>
     </ul>
 
 </footer>

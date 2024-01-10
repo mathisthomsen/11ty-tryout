@@ -683,3 +683,34 @@ nav#mainNav
 
 .centered
     align-items: center
+
+.language-switch
+    position: relative
+
+#langToggle
+    cursor: pointer
+    border: none
+    background-color: unset
+    font-weight: unset
+    font-family: inherit
+    font-size: inherit
+
+.language-switch__list
+    list-style-type: none
+    position: absolute
+    top: -400%
+    background-color: var(--col-accent-50)
+    padding: 1rem
+    border: 1px var(--col-neutral-40) solid
+    border-radius: 4px
+    display: flex
+    flex-direction: column
+    gap: .5rem
+    transform-origin: bottom
+    transform: rotatex(90deg)
+    transition: all 300ms linear
+    pointer-events: none
+
+    &.open
+        transform: rotatex(0deg)
+        pointer-events: all

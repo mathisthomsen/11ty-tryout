@@ -30,3 +30,29 @@ burgerToggle.addEventListener('click', toggleMenu)
 if (main.getAttribute('data-state') === 'open') {
     main.addEventListener('click', toggleMenu)
 }
+
+// MULTILINGUAL
+
+const langToggle = document.querySelector('#langToggle')
+const langList = document.querySelector('#langList')
+
+const openLangList = function(){
+    langList.classList.toggle('open')
+}
+// 1 GET BROWSER LANG
+
+let browserLang = navigator.language
+//console.log(browserLang)
+console.log(localStorage.getItem('locale'))
+// 2 SAFE IN COOKIE
+if (localStorage.getItem('locale') === null) {
+    localStorage.setItem('locale', browserLang)
+    console.log('lang has been set')
+} else {
+    console.log('lang is already set')
+}
+// UPDATE ON LANG TOGGLE & REDIRECT
+const changeLanguage = function(el){
+        console.log(el)  
+}
+// REDIRECT ON INITIAL VISIT

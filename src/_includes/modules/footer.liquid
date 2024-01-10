@@ -7,6 +7,14 @@
         {% for page in collections.footer %}
             <li class="footer__linkList__item"><a href="/{{page.data.title | slug}}">{{page.data.title}}</a></li>
         {% endfor %}
+            <li onclick="openLangList()" class="footer__linkList__item language-switch">
+                <button id="langToggle">Language</button>
+                <ul aria-hidden="true" class="language-switch__list" id="langList">
+                    <li><a class="footer__linkList__item" href="index.html" onclick="changeLanguage('en')">English</a></li>
+                    <li><a class="footer__linkList__item" href="index.html" onclick="changeLanguage('de')">Deutsch</a></li>
+                </ul>
+
+            </li>
     </ul>
 
 </footer>
