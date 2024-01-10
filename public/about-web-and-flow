@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop searching for you</title>
+    <title>About Web & Flow</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -75,33 +75,24 @@
         
 
         
+            <li class="breadcrumb__element"><span aria-current="page">About Web & Flow</span></li>
+        
 
         
         
-        
-             <li class="breadcrumb__element chevron__right"><a href="/Meta">Meta</a></li>
-            <li class="breadcrumb__element"><span aria-current="page">Stop searching for you</span></li>
         
         
     </ul>
 </nav>
-<div class="articleHeader"> 
-    <img class="articleHeader__image" src="/assets/image-11.jpg" alt="">
-    <div class="articleHeader__content">
-        <h1 class="articleHeader__title">Stop searching for you</h1>
-        <p class="articleHeader__description">Was ist so besonders an dir, dass du glaubst es lohne sich gefunden zu werden?</p>
-    </div>
-</div>
-<div class="articleMain">
-
-    <p>Ich bin dann mal auf einem Selbsfindungstrip. Ich muss mich selbst finden. Ich weiß nicht, wer ich bin. Unsere Zeit legt ungeheur viel Wert darauf, dass jeder weiß, wer er ist. Dabei ist das nun wirklich nicht so schwer. Und es gibt viel wichtigere Fragen zu beantworten. Zieht euren Kopf aus dem Allerwertesten und kümmert euch um die bedeutenden Dinge.</p>
-<p><img src="https://unsplash.it/800/300" alt="some example image" title="Logo Title Text 1"></p>
-
-
+<div class="pageHeader">
+    <h1 class="accentTitle">About Web & Flow</h1>
 </div>
 
+<div class="pageMain">
 
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum doloremque quo dolor soluta voluptatum aperiam alias commodi quasi excepturi nulla recusandae architecto natus, nesciunt quam mollitia! Necessitatibus veniam nesciunt natus quam consequatur quisquam alias velit illum deleniti saepe? Corporis, vel adipisci. Tempora ea, doloremque natus nostrum maxime eos quae perferendis.
 
+</section>
     </main>
     <footer class="footer">
 

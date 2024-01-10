@@ -4,7 +4,7 @@ pageType: article
 permalink: "{{ category }}/{{ title | slug}}/"
 ---
 
-{% include modules/breadcrumb.liquid %}
+{% include 'modules/breadcrumb.liquid' %}
 <div class="articleHeader"> 
     <img class="articleHeader__image" src="/assets/{{image}}" alt="">
     <div class="articleHeader__content">
@@ -14,7 +14,7 @@ permalink: "{{ category }}/{{ title | slug}}/"
 </div>
 <div class="articleMain">
 
-    {{ content | safe}}
+    {{ content }}
 
 </div>
 

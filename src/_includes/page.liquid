@@ -1,0 +1,16 @@
+---
+layout: base.liquid
+pageType: page
+permalink: "{{ title | slugify }}"
+---
+
+{% include "modules/breadcrumb.liquid" %}
+<div class="pageHeader">
+    <h1 class="accentTitle">{{ title }}</h1>
+</div>
+
+<div class="pageMain">
+
+    {{ content }}
+
+</section>

@@ -5,7 +5,7 @@ layout: 'base.liquid'
 ---
         <!-- <section class="teaserList teaserTiles"> -->
             {%- for article in collections.featured -%}
-                {% include modules/splitHero %}
+                {% include 'modules/splitHero' %}
             {%- endfor -%}
         <!-- </section>   -->
 
@@ -14,7 +14,7 @@ layout: 'base.liquid'
 
             
             <section class="noMargin flex-col centered">
-                <h2 class="categoryTitle">{{ tag }}</h2>
+                <h2 class="accentTitle">{{ tag }}</h2>
                 <div class="teaserList teaserTiles noMargin">
                     {% assign count = 1 %}
 
@@ -22,8 +22,8 @@ layout: 'base.liquid'
                         {% if article.data.tags contains 'featured' and count <= 4 %}
                             {% continue %}
                         {% elsif count <= 4 %}
-                            {% include modules/mediumTile %}
-                            {% assign count = count | | plus: 1 %}
+                            {% include 'modules/mediumTile' %}
+                            {% assign count = count | plus: 1 %}
                         {% else %}
                             {% break %}
                         {% endif %}

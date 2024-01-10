@@ -45,6 +45,13 @@ body, div, header, main, footer, section, article, ul, ol, li, a, h1, h2, h3, p,
 
 h1,h2,h3,h4
     font-weight: 400
+    font-family: "Time New Roman", serif
+
+h1
+    font-size: 3.5rem
+
+h2
+    font-size: 2.5rem
 
 img
     max-width: 100%
@@ -234,8 +241,8 @@ nav#mainNav
     display: flex
     flex-direction: column
     align-items: center
-    background-color: var(--col-neutral-20)
-    color: white
+    background-color: var(--col-accent-50)
+    color: var(--col-neutral-10)
     margin-top: 5rem
     padding: 2rem 1rem
 
@@ -281,7 +288,7 @@ nav#mainNav
 
 // HOME
 
-.categoryTitle
+.accentTitle
     font-size: 56px
     position: relative
     font-family: 'Times New Roman', serif
@@ -416,7 +423,7 @@ nav#mainNav
 .teaser__link
     position: relative
     display: inline-block
-    color: currenColor
+    color: currentColor
     font-size: 1.25rem
     text-decoration: none
     margin-top: 1em
@@ -638,6 +645,18 @@ nav#mainNav
         font-weight: 600
         margin-right: .2em
         float: left
+
+.pageMain
+    max-width: 72ch
+    font-size: 1.25rem
+    line-height: 1.5
+    padding: 1rem
+
+    >*
+        margin-block-end: 1rem
+
+    >p
+        margin-block-end: 2rem
 
 // UTILITIES
 

@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body data-menustate = "closed">
-    {% include modules/header %}
+    {% include 'modules/header' %}
     <main data-menustate="closed">
-        {{ content | safe }}
+        {{ content }}
     </main>
-    {% include modules/footer %}
+    {% include 'modules/footer' %}
     <script src="/main.js"></script>
 </body>
 </html>

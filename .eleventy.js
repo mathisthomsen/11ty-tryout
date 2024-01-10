@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig){
         collectionApi.getAll().forEach((item) => {
           if (!item.data.tags) return
           item.data.tags
-            .filter((tag) => !['all', 'featured', 'article', 'pages'].includes(tag))
+            .filter((tag) => !['all', 'featured', 'article', 'pages', 'footer'].includes(tag))
             .forEach((tag) => tagsSet.add(tag))
         })
         return [...tagsSet].sort((a, b) => a.localeCompare(b))

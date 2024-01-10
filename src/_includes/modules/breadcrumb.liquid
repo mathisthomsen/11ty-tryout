@@ -4,7 +4,15 @@
 
         <li class="breadcrumb__element chevron__right"><a href="/">Home</a></li>
         {% if pageType == 'category' %}
-            <li class="breadcrumb__element"><span aria-current="page">{{tag}}</span></li>
+            <li class="breadcrumb__element"><span aria-current="page">{{category}}</span></li>
+        {% endif %}
+
+        {% if pageType == 'page' %}
+            <li class="breadcrumb__element"><span aria-current="page">{{title}}</span></li>
+        {% endif %}
+
+        {% if pageType == 'footer' %}
+            <li class="breadcrumb__element"><span aria-current="page">{{title}}</span></li>
         {% endif %}
         
         {% if pageType == 'article' %}

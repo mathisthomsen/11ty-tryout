@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop searching for you</title>
+    <title>du bist dumm</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -66,42 +66,37 @@
     </div>
 </header>
     <main data-menustate="closed">
-        
-<nav aria-label="breadcrumb" class="breadcrumb">
+        <nav aria-label="breadcrumb" class="breadcrumb">
 
     <ul>
 
         <li class="breadcrumb__element chevron__right"><a href="/">Home</a></li>
         
-
         
-
-        
-        
-        
-             <li class="breadcrumb__element chevron__right"><a href="/Meta">Meta</a></li>
-            <li class="breadcrumb__element"><span aria-current="page">Stop searching for you</span></li>
         
         
     </ul>
 </nav>
-<div class="articleHeader"> 
-    <img class="articleHeader__image" src="/assets/image-11.jpg" alt="">
-    <div class="articleHeader__content">
-        <h1 class="articleHeader__title">Stop searching for you</h1>
-        <p class="articleHeader__description">Was ist so besonders an dir, dass du glaubst es lohne sich gefunden zu werden?</p>
+
+<h1 class="categoryTitle">hallo</h1>
+<section class="teaserList teaserTiles">
+
+    
+        
+            <article class="teaser bigTile">
+    <a class="bigTile__link" href="" title=""></a>
+    <div class="bigTile__content">
+        <h2 class="teaser__title"></h2>
+        <p class="teaser__copy"></p>
     </div>
-</div>
-<div class="articleMain">
+    <span class="bigTile__gradient"></span>
+    <img src="/assets/" alt="" class="bigTile__image">       
+</article>
+        
+        
+    
 
-    <p>Ich bin dann mal auf einem Selbsfindungstrip. Ich muss mich selbst finden. Ich weiß nicht, wer ich bin. Unsere Zeit legt ungeheur viel Wert darauf, dass jeder weiß, wer er ist. Dabei ist das nun wirklich nicht so schwer. Und es gibt viel wichtigere Fragen zu beantworten. Zieht euren Kopf aus dem Allerwertesten und kümmert euch um die bedeutenden Dinge.</p>
-<p><img src="https://unsplash.it/800/300" alt="some example image" title="Logo Title Text 1"></p>
-
-
-</div>
-
-
-
+</section>
     </main>
     <footer class="footer">
 
@@ -109,13 +104,9 @@
         <p>© 2021 Mathis Thomsen</p>
     </div>
     <ul class="footer__linkList">
-        
-            <li class="footer__linkList__item"><a href="/impressum">Impressum</a></li>
-        
-            <li class="footer__linkList__item"><a href="/datenschutz">Datenschutz</a></li>
-        
-            <li class="footer__linkList__item"><a href="/kontakt">Kontakt</a></li>
-        
+        <li class="footer__linkList__item"><a href="#">Impressum</a></li>
+        <li class="footer__linkList__item"><a href="#">Datenschutz</a></li>
+        <li class="footer__linkList__item"><a href="#">Kontakt</a></li>
     </ul>
 
 </footer>

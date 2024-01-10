@@ -1,0 +1,28 @@
+---
+layout: 'base.liquid'
+pageType: category
+pagination:
+  data: collections
+  size: 1
+  alias: category
+  filter:
+    - featured
+    - article
+    - all
+    - tagsList
+permalink: "{{ category | slugify}}/"
+---
+{% include 'modules/breadcrumb' %}
+<h1 class="accentTitle">{{category}}</h1>
+<section class="teaserList teaserTiles">
+    <script>console.log('{{category}}')</script>
+    {% for article in collections[category] %}
+        {% if forloop.first %}
+            {% include 'modules/bigTile' %}
+        {% else %}
+            {% include 'modules/smallTile' %}
+        {% endif %}
+        
+    {% endfor %}
+
+</section>
